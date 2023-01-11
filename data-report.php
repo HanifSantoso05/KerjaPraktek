@@ -1,54 +1,59 @@
 <div id="wrapper" class="wrapper-content">
-    <?php
+      <?php
         include "sidebar1.php"
     ?>
-    <div id="page-content-wrapper">
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <button class="btn-menu btn btn-toggle-menu" type="button" style="background :#138D75; color:#E9E8E8;"><i class='fas fa-bars'></i>
-                    </button>
-                </div>
-            </div>
-        </nav>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="container">
-                        <h1 class="text-center font-weight-bold" style = "color: #565757;">Quality Yeild Report</h1>
-                        <br>
-                        <div class="row g-4">
-                            <div class="col-auto">
-                                <a href="tambah-data-report.php"><button class="btn btn-primary text-white ">Tambah</button></a> 
-                            </div>
-                            <div class="col-auto">
-                                <a href="data-report-perbulan.php"><button class=" btn btn-warning text-white">Data Report Perbulan</button></a>
-                            </div>
+      <div id="page-content-wrapper">
+            <nav class="navbar navbar-default">
+                  <div class="container">
+                        <div class="navbar-header">
+                              <button class="btn-menu btn btn-toggle-menu" type="button"
+                                    style="background :#138D75; color:#E9E8E8;"><i class='fas fa-bars'></i>
+                              </button>
                         </div>
-                        <br>
-                        <table class="table table-hover">
-                              <thead class="thead-light">
-                                    <tr class="bg-secondary text-white">
-                                        <th>No</th>
-                                        <th>Seq</th>
-                                        <th>Lot</th>
-                                        <th>Coil_Number	</th>
-                                        <th>Mother_Coil</th>
-                                        <th>Grade</th>
-                                        <th>Finish</th>
-                                        <th>Thickness</th>
-                                        <th>Width</th>	
-                                        <th>Material_Processed</th>
-                                        <th>PRIME_SLT</th>
-                                        <th>KW2</th>
-                                        <th>BabyCoil</th>
-                                        <th>Scrap</th>
-                                        <th>SS</th>
-                                        <th>Weighing Balance</th>
-                                    </tr>
-                              </thead>
-                              <tbody>
-                                    <?php
+                  </div>
+            </nav>
+            <div class="container">
+                  <div class="row">
+                        <div class="col-lg-12">
+                              <div class="container">
+                                    <h1 class="text-center font-weight-bold" style="color: #565757;">Quality Yeild
+                                          Reporaaaaata</h1>
+                                    <br>
+                                    <div class="row g-4">
+                                          <div class="col-auto">
+                                                <a href="tambah-data-report.php"><button
+                                                            class="btn btn-primary text-white ">Tambah</button></a>
+                                          </div>
+                                          <div class="col-auto">
+                                                <a href="data-report-perbulan.php"><button
+                                                            class=" btn btn-warning text-white">Data Report
+                                                            Perbulan</button></a>
+                                          </div>
+                                    </div>
+                                    <br>
+                                    <table class="table table-hover">
+                                          <thead class="thead-light">
+                                                <tr class="bg-secondary text-white">
+                                                      <th>No</th>
+                                                      <th>Seq</th>
+                                                      <th>Lot</th>
+                                                      <th>Coil_Number </th>
+                                                      <th>Mother_Coil</th>
+                                                      <th>Grade</th>
+                                                      <th>Finish</th>
+                                                      <th>Thickness</th>
+                                                      <th>Width</th>
+                                                      <th>Material_Processed</th>
+                                                      <th>PRIME_SLT</th>
+                                                      <th>KW2</th>
+                                                      <th>BabyCoil</th>
+                                                      <th>Scrap</th>
+                                                      <th>SS</th>
+                                                      <th>Weighing Balance</th>
+                                                </tr>
+                                          </thead>
+                                          <tbody>
+                                                <?php
                                     include "koneksi.php";
 
                                     $halaman = 10;
@@ -92,36 +97,41 @@
                                         $no++;
                                     }
                                     ?>
-                              </tbody>
-                        </table>
+                                          </tbody>
+                                    </table>
 
-                        <div>
-                            <ul class="pagination">
-                                <!-- link Previous Page -->
-                                <?php
+                                    <div>
+                                          <ul class="pagination">
+                                                <!-- link Previous Page -->
+                                                <?php
                                     if($page == 1){ 
-                                    ?>        
-                                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                                    <?php
+                                    ?>
+                                                <li class="page-item disabled"><a class="page-link"
+                                                            href="#">Previous</a></li>
+                                                <?php
                                     }
                                     else{ 
                                     $LinkPrev = ($page > 1)? $page - 1 : 1;  
 
                                     if($cari=="" && $halaman==10){
                                     ?>
-                                        <li class="page-item"><a class="page-link" href="data-report.php?page=<?php echo $LinkPrev; ?>">Previous</a></li>
-                                    <?php     
+                                                <li class="page-item"><a class="page-link"
+                                                            href="data-report.php?page=<?php echo $LinkPrev; ?>">Previous</a>
+                                                </li>
+                                                <?php     
                                     }
                                     else{
-                                    ?> 
-                                        <li class="page-item"><a class="page-link" href="data-report.php?cari=<?php echo $cari;?>&page=<?php echo $LinkPrev;?>&show=<?php echo $halaman;?>">Previous</a></li>
-                                    <?php
+                                    ?>
+                                                <li class="page-item"><a class="page-link"
+                                                            href="data-report.php?cari=<?php echo $cari;?>&page=<?php echo $LinkPrev;?>&show=<?php echo $halaman;?>">Previous</a>
+                                                </li>
+                                                <?php
                                     } 
                                     }
                                 ?>
 
-                                <!-- link Pencarian -->
-                                <?php
+                                                <!-- link Pencarian -->
+                                                <?php
                                     
                                     if($cari=="" && $bulan=="" && $tahun=="" && $halaman==10){
                                         $data= mysqli_query($koneksi, "SELECT * FROM book2");
@@ -140,47 +150,52 @@
 
                                     if($cari=="" && $halaman==10 ){
                                     ?>
-                                        <li class="page-item" <?php echo $linkActive; ?>><a class="page-link" href="data-report.php?page=<?php echo $i; ?>&show=<?php echo $halaman;?>"><?php echo $i; ?></a></li>
+                                                <li class="page-item" <?php echo $linkActive; ?>><a class="page-link"
+                                                            href="data-report.php?page=<?php echo $i; ?>&show=<?php echo $halaman;?>"><?php echo $i; ?></a>
+                                                </li>
 
-                                    <?php
+                                                <?php
                                     }
                                     else{
                                     ?>
-                                        <li class="page-item" <?php echo $linkActive; ?>><a class="page-link" href="data-report.php?cari=<?php echo $cari;?>&page=<?php echo $i; ?>&show=<?php echo $halaman;?>"><?php echo $i; ?></a></li>
-                                    <?php
+                                                <li class="page-item" <?php echo $linkActive; ?>><a class="page-link"
+                                                            href="data-report.php?cari=<?php echo $cari;?>&page=<?php echo $i; ?>&show=<?php echo $halaman;?>"><?php echo $i; ?></a>
+                                                </li>
+                                                <?php
                                     }
                                 }
                                 ?>
-                                
-                                <!-- link Next Page -->
-                                <?php       
+
+                                                <!-- link Next Page -->
+                                                <?php       
                                 if($page == $jumlahPage){ 
                                 ?>
-                                    <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
-                                <?php
+                                                <li class="page-item disabled"><a class="page-link" href="#">Next</a>
+                                                </li>
+                                                <?php
                                 }
                                 else{
                                     $linkNext = ($page < $jumlahPage)? $page + 1 : $jumlahPage;
                                 if($cari=="" && $halaman==10){
                                     ?>
-                                        <li class="page-item"><a class="page-link" href="data-report.php?page=<?php echo $linkNext; ?>&show=<?php echo $halaman;?>">Next</a></li>
-                                <?php     
+                                                <li class="page-item"><a class="page-link"
+                                                            href="data-report.php?page=<?php echo $linkNext; ?>&show=<?php echo $halaman;?>">Next</a>
+                                                </li>
+                                                <?php     
                                     }else{
-                                    ?> 
-                                    <li class="page-item"><a class="page-link" href="data-report.php?cari=<?php echo $cari;?>&page=<?php echo $linkNext; ?>&show=<?php echo $halaman;?>">Next</a></li>
-                                <?php
+                                    ?>
+                                                <li class="page-item"><a class="page-link"
+                                                            href="data-report.php?cari=<?php echo $cari;?>&page=<?php echo $linkNext; ?>&show=<?php echo $halaman;?>">Next</a>
+                                                </li>
+                                                <?php
                                     }
                                 }
                                 ?>
-                            </ul>
+                                          </ul>
+                                    </div>
+                              </div>
                         </div>
-                    </div>
-                </div>
+                  </div>
             </div>
-        </div>
-    </div>
+      </div>
 </div>
-
-
-
-
