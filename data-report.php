@@ -17,48 +17,13 @@
                     <div class="container">
                         <h1 class="text-center font-weight-bold" style = "color: #565757;">Quality Yeild Report</h1>
                         <br>
-                        <form class="row g-4">
+                        <div class="row g-4">
                             <div class="col-auto">
-                                <input type="text" class="form-control" name="cari"  placeholder="Search">
+                                <a href="tambah-data-report.php"><button class="btn btn-primary text-white ">Tambah</button></a> 
                             </div>
                             <div class="col-auto">
-                                <select class="form-control " name="bulan">
-                                    <option value="">Bulan</option>
-                                    <option value="01">Januari</option>
-                                    <option value="02">Februari</option>
-                                    <option value="03">Maret</option>
-                                    <option value="04">April</option>
-                                    <option value="05">Mei</option>
-                                    <option value="06">Juni</option>
-                                    <option value="07">Juli</option>
-                                    <option value="08">Agustus</option>
-                                    <option value="09">September</option>
-                                    <option value="10">Oktober</option>
-                                    <option value="12">November</option>
-                                    <option value="12">Desember</option>
-                                </select>
+                                <a href="data-report-perbulan.php"><button class=" btn btn-warning text-white">Data Report Perbulan</button></a>
                             </div>
-                            <div class="col-auto">
-                                <select class="form-control" name="tahun">
-                                    <?php
-                                    $mulai= date('Y') - 50;
-                                    for($i = $mulai;$i<$mulai + 100;$i++){
-                                        $sel = $i == date('Y') ? ' selected="selected"' : '';
-                                        echo '<option value="'.$i.'"'.$sel.'>'.$i.'</option>';
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                            <div class="col-auto">
-                                <input class="form-control btn btn-primary" type="submit" value="Cari">
-                            </div>
-                            <div class="col-auto">
-                                <a href="data-report.php"><button class="form-control btn btn-secondary">Reset</button></a>
-                            </div>
-                        </form>
-                        <br>
-                        <div>
-                            <a href="tambah-data-report.php"><button class="btn btn-success text-white ">Tambah</button></a> 
                         </div>
                         <br>
                         <table class="table table-hover">
@@ -90,16 +55,16 @@
                                     $page	 = (isset($_GET['page']))? (int) $_GET['page'] : 1;
                                     $cari    = (isset($_GET['cari']))? $_GET['cari'] : "";
                                     $bulan    = (isset($_GET['bulan']))? $_GET['bulan'] : "";
-                                    $tahun    = (isset($_GET['tahun']))? $_GET['tahun'] : "";
+                                    $tahun    = (isset($_GET['tahun']))? $_GET['tahun'] : 0;
                                     $mulai   = ($page - 1) * $halaman;
                         
                                     // Pengkondisian untuk fungsi pencarian menu makanan
-                                    if($cari=="" && $halaman==10){
+                                    if($cari=="" && $bulan=="" && $tahun=="" && $halaman==10){
                                         $data= mysqli_query($koneksi, "SELECT * FROM book2 LIMIT ".$mulai.",".$halaman);
                                     }else{
                                     //pengkondisian jika parameter kolom pencarian diisi
-                                        $data = mysqli_query($koneksi, "SELECT * FROM book2 WHERE Coil_Number like '%".$cari."%' LIMIT ".$mulai.", ".$halaman);
-                                        echo "<b>Hasil pencarian : ".$cari."</b>";
+                                        $data = mysqli_query($koneksi, "SELECT * FROM book2 WHERE Coil_Number = '$cari' OR (month(tanggal)='$bulan' AND year(tanggal) = '$tahun') LIMIT ".$mulai.", ".$halaman);
+                                        echo "<b>Hasil pencarian : $cari, $bulan, $tahun</b>";
                                     }
                                     
                                     $no	=$mulai+1;
@@ -158,10 +123,10 @@
                                 <!-- link Pencarian -->
                                 <?php
                                     
-                                    if($cari=="" && $halaman==10){
+                                    if($cari=="" && $bulan=="" && $tahun=="" && $halaman==10){
                                         $data= mysqli_query($koneksi, "SELECT * FROM book2");
                                     }else{
-                                        $data = mysqli_query($koneksi, "SELECT * FROM book2 WHERE Coil_Number like '%".$cari."%'");
+                                        $data = mysqli_query($koneksi, "SELECT * FROM book2 WHERE Coil_Number = '$cari' OR (month(tanggal)='$bulan' AND year(tanggal) = '$tahun')");
                                     }   
                                 
                                     $JumlahData = mysqli_num_rows($data);

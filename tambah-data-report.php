@@ -81,7 +81,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Weighing Balance :</label>
-                                                    <input type="text" class="form-control" name="Weighing_sBalance" required/>
+                                                    <input type="text" class="form-control" name="Weighing_Balance" required/>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Tanggal :</label>
@@ -97,7 +97,7 @@
                                 </div>
                             </div>
                             <?php
-                                include 'koneksi.php'
+                                include 'koneksi.php';
                                 if(isset($_POST['submit'])){
                                     $Seq		                = $_POST['Seq'];
                                     $Lot		                = $_POST['Lot'];
@@ -107,7 +107,7 @@
                                     $Finish		                = $_POST['Finish'];
                                     $Thickness		            = $_POST['Thickness'];
                                     $Width		                = $_POST['Width'];
-                                    $Matrial_Processed		    = $_POST['Matrial_Processed'];
+                                    $Material_Processed		    = $_POST['Material_Processed'];
                                     $PRIME_SLT                  = $_POST['PRIME_SLT'];
                                     $KW2		                = $_POST['KW2'];
                                     $BabyCoil		            = $_POST['BabyCoil'];
@@ -120,7 +120,7 @@
                                     $cek = mysqli_query($koneksi, "SELECT * FROM book2 WHERE Seq='$Seq'") or die(mysqli_error($koneksi));
 
                                     if(mysqli_num_rows($cek) == 0){
-                                        $sql = mysqli_query($koneksi, "INSERT INTO book2 (Seq,Lot,Coil_Number,Mother_Coil,Grade,Finish,Thickness,Width,Material_Processed,PRIME_SLT,KW2,BabyCoil,Scrap,SS,Weighing_Balance,tanggal) VALUES('$Seq', '$Lot', '$Coil_Number', '$Mother_Coil','$Grade', '$Finish','$Thickness','$Width','$Material_Processed','$PRIME_SLT','$KW2','$BabyCoil','$Scrap','$SS','$Weighing_Balance','tanggal')") or die(mysqli_error($koneksi));
+                                        $sql = mysqli_query($koneksi, "INSERT INTO book2 (Seq,Lot,Coil_Number,Mother_Coil,Grade,Finish,Thickness,Width,Material_Processed,PRIME_SLT,KW2,BabyCoil,Scrap,SS,Weighing_Balance,tanggal) VALUES('$Seq', '$Lot', '$Coil_Number', '$Mother_Coil','$Grade', '$Finish','$Thickness','$Width','$Material_Processed','$PRIME_SLT','$KW2','$BabyCoil','$Scrap','$SS','$Weighing_Balance','$tanggal')") or die(mysqli_error($koneksi));
                                         if($sql){
                                             echo '<script>alert("Berhasil menambahkan data."); document.location="data-report.php";</script>';
                                         }else{
