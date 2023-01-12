@@ -1,6 +1,6 @@
 <div id="wrapper" class="wrapper-content">
     <?php
-        include "sidebar1.php"
+        include "sidebar.php"
     ?>
     <div id="page-content-wrapper">
         <nav class="navbar navbar-default">

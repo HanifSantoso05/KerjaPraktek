@@ -1,6 +1,6 @@
 <div id="wrapper" class="wrapper-content">
       <?php
-        include "sidebar1.php"
+        include "sidebar.php"
     ?>
       <div id="page-content-wrapper">
             <nav class="navbar navbar-default">
@@ -24,11 +24,6 @@
                                                             <div class="card-body">
                                                                   <form class="form" method="POST" action="">
                                                                         <h1 class="card-title">Tambah Dataaaaa</h1>
-                                                                        <div class="form-group">
-                                                                              <label>Seq No :</label>
-                                                                              <input type="number" class="form-control"
-                                                                                    name="Seq" required />
-                                                                        </div>
                                                                         <div class="form-group">
                                                                               <label>Lot :</label>
                                                                               <input type="number" class="form-control"
@@ -120,28 +115,27 @@
                                           <?php
                                 include 'koneksi.php';
                                 if(isset($_POST['submit'])){
-                                    $Seq		                = $_POST['Seq'];
-                                    $Lot		                = $_POST['Lot'];
-                                    $Coil_Number                = $_POST['Coil_Number'];
-                                    $Mother_Coil                = $_POST['Mother_Coil'];
-                                    $Grade		                = $_POST['Grade'];
-                                    $Finish		                = $_POST['Finish'];
-                                    $Thickness		            = $_POST['Thickness'];
-                                    $Width		                = $_POST['Width'];
-                                    $Material_Processed		    = $_POST['Material_Processed'];
-                                    $PRIME_SLT                  = $_POST['PRIME_SLT'];
-                                    $KW2		                = $_POST['KW2'];
-                                    $BabyCoil		            = $_POST['BabyCoil'];
-                                    $Scrap		                = $_POST['Scrap'];
-                                    $SS		                    = $_POST['SS'];
-                                    $Weighing_Balance		    = $_POST['Weighing_Balance'];
-                                    $tanggal		            = $_POST['tanggal'];
+                                    $Lot		        = $_POST['Lot'];
+                                    $Coil_Number        = $_POST['Coil_Number'];
+                                    $Mother_Coil        = $_POST['Mother_Coil'];
+                                    $Grade              = $_POST['Grade'];
+                                    $Finish		  = $_POST['Finish'];
+                                    $Thickness		  = $_POST['Thickness'];
+                                    $Width		  = $_POST['Width'];
+                                    $Material_Processed = $_POST['Material_Processed'];
+                                    $PRIME_SLT          = $_POST['PRIME_SLT'];
+                                    $KW2		        = $_POST['KW2'];
+                                    $BabyCoil		  = $_POST['BabyCoil'];
+                                    $Scrap		  = $_POST['Scrap'];
+                                    $SS		        = $_POST['SS'];
+                                    $Weighing_Balance	  = $_POST['Weighing_Balance'];
+                                    $tanggal		  = $_POST['tanggal'];
 
 
                                     $cek = mysqli_query($koneksi, "SELECT * FROM book2 WHERE Seq='$Seq'") or die(mysqli_error($koneksi));
 
                                     if(mysqli_num_rows($cek) == 0){
-                                        $sql = mysqli_query($koneksi, "INSERT INTO book2 (Seq,Lot,Coil_Number,Mother_Coil,Grade,Finish,Thickness,Width,Material_Processed,PRIME_SLT,KW2,BabyCoil,Scrap,SS,Weighing_Balance,tanggal) VALUES('$Seq', '$Lot', '$Coil_Number', '$Mother_Coil','$Grade', '$Finish','$Thickness','$Width','$Material_Processed','$PRIME_SLT','$KW2','$BabyCoil','$Scrap','$SS','$Weighing_Balance','$tanggal')") or die(mysqli_error($koneksi));
+                                        $sql = mysqli_query($koneksi, "INSERT INTO book2 (Seq,Lot,Coil_Number,Mother_Coil,Grade,Finish,Thickness,Width,Material_Processed,PRIME_SLT,KW2,BabyCoil,Scrap,SS,Weighing_Balance,tanggal) VALUES('','$Lot', '$Coil_Number', '$Mother_Coil','$Grade', '$Finish','$Thickness','$Width','$Material_Processed','$PRIME_SLT','$KW2','$BabyCoil','$Scrap','$SS','$Weighing_Balance','$tanggal')") or die(mysqli_error($koneksi));
                                         if($sql){
                                             echo '<script>alert("Berhasil menambahkan data."); document.location="data-report.php";</script>';
                                         }else{
