@@ -35,7 +35,7 @@
                                                     <label for="logo"><img src="favicon.png" alt="logo" class="img-cover-profile rounded mb-2 img-thumbnail" width="180px" height="180px"></label>
                                                 </div>
                                               </form>
-                                              <div class="media-body mb-5 text-white">
+                                              <div class="media-body mt-3 mb-5 text-white">
                                                   <h4 class="mt-0 mb-0">PT IMR ARC STEEL</h4>
                                                   <p class="small mb-4">Administrator</p>
                                                   <br>
