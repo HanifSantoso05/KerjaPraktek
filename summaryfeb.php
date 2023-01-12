@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Yield Data Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="IMR_ARC_STEEL3.png" type="image/png">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body> 
 <div id="wrapper" class="wrapper-content">
     <?php
         include "sidebar.php"
@@ -6,7 +18,7 @@
         <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
-                    <button class="btn-menu btn btn-toggle-menu" type="button" style="background :#138D75; color:#E9E8E8;"><i class='fas fa-bars'></i>
+                    <button class="btn-menu btn btn-toggle-menu" type="button" style="background :#466d69; color:#E9E8E8;"><i class='fas fa-bars'></i>
                     </button>
                 </div>
             </div>
@@ -227,3 +239,6 @@
         </div>
     </div>
 </div>
+</body>
+</html>
+

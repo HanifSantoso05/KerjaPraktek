@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Yield Data Report</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="IMR_ARC_STEEL.png" type="image/png">
+    <link rel="icon" href="IMR_ARC_STEEL3.png" type="image/png">
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
